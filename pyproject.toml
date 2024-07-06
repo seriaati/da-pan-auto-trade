@@ -1,0 +1,32 @@
+[project]
+description = "元大台灣50正2交易"
+name = "da-pan-auto-trade"
+requires-python = ">=3.11"
+
+[tool.poetry]
+authors = ["seria <seria.ati@gmail.com>"]
+description = "元大台灣50正2交易"
+license = "GPL-3.0-only"
+name = "da-pan-auto-trade"
+readme = "README.md"
+version = "0.1.0"
+
+[tool.poetry.dependencies]
+bs4 = "^0.0.2"
+loguru = "^0.6.0"
+lxml = "^5.2.2"
+pandas = "^2.2.2"
+python = "^3.11"
+requests = "^2.32.3"
+shioaji = {version = "^1.2.3", extras = ["speed"]}
+python-dotenv = "^1.0.1"
+
+[tool.poetry.group.dev]
+optional = true
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.5.1"
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core"]
