@@ -8,6 +8,7 @@ authors = ["seria <seria.ati@gmail.com>"]
 description = "元大台灣50正2交易"
 license = "GPL-3.0-only"
 name = "da-pan-auto-trade"
+package-mode = false
 readme = "README.md"
 version = "0.1.0"
 
@@ -17,9 +18,9 @@ loguru = "^0.6.0"
 lxml = "^5.2.2"
 pandas = "^2.2.2"
 python = "^3.11"
+python-dotenv = "^1.0.1"
 requests = "^2.32.3"
 shioaji = {version = "^1.2.3", extras = ["speed"]}
-python-dotenv = "^1.0.1"
 
 [tool.poetry.group.dev]
 optional = true
