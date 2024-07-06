@@ -1,4 +1,5 @@
 import argparse
+import datetime
 import time
 import warnings
 
@@ -38,7 +39,14 @@ args = parser.parse_args()
 
 
 def main() -> None:  # noqa: C901, PLR0912, PLR0915
+    if datetime.datetime.now().weekday() >= 5:
+        line_notify("今天是假日, 不執行")
+        return
+
     check_env()
+    line_notify(
+        f"參數: 不使用快取 {args.no_cache}, 禁用測試模式 {args.no_simul}, 購買股數 {args.trade_amount}"
+    )
 
     try:
         stock_ids = get_stock_ids()
@@ -47,7 +55,6 @@ def main() -> None:  # noqa: C901, PLR0912, PLR0915
         return
 
     line_notify(f"找到 {len(stock_ids)} 支股票")
-
     line_notify("開始取得所有股票的收盤價")
 
     stock_prices = {} if args.no_cache else read_price_cache()
